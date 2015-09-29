@@ -5,11 +5,14 @@ namespace FlamingGenius\SandRun;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\event\Listener;
+use pocketmine\Player;
+use pocketmine\event\Event;
 
 class SandRun extends PluginBase implements Listener{
  public $timer = [];
  public function onEnable(){
   $this->saveDefaultConfig();
+  $this->getServer()->getPluginManager()->registerEvents($this, $this);
  }
  
  public function createTask(){
