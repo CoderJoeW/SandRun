@@ -23,6 +23,15 @@ class SandRun extends PluginBase implements Listener{
   $player = $event->getPlayer();
   $playerName = $player->getName();
  }
+ 
+ public function onLobbyJoin(){
+  $lobby = $this->getConfig()->get("lobby-world");
+  $players = $this->getServer()->getLevelByName($lobby)->getOnlinePlayers();
+  $min = $this->getConfig()->get("min-players");
+  if(count($players) >= $min){
+   
+  }
+ }
 
 
 }
