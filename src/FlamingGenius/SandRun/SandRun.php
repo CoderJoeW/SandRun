@@ -3,7 +3,6 @@
 namespace FlamingGenius\SandRun;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\scheduler\PluginTask;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\event\Event;
