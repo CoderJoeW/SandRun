@@ -1,0 +1,13 @@
+---
+//Arena Position
+x: 0
+y: 0
+z: 0
+level: world
+//Lobby Configurations
+
+//Amount of time before match starts
+seconds: 30
+
+
+...
