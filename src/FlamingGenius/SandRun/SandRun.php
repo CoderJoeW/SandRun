@@ -21,10 +21,6 @@ class SandRun extends PluginBase implements Listener{
   $this->timer[$timer->getTaskId] = $timer->getTaskId();
  }
 
- public function onPlayerJoin(PlayerJoinEvent $event){
-  $player = $event->getPlayer();
-  $playerName = $player->getName();
- }
  
  public function onLobbyJoin(){
   $lobby = $this->getConfig()->get("lobby-world");
