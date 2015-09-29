@@ -24,6 +24,11 @@ Once in the arena users will run around as a random block of sand falls every 3 
 * Setup lobby
 * Finish coding
 * Add teleport to arena
+* Create rewards system(With pocketmoney and economy support)
+* Create achievements
+* Create leaderboard
+* Create lose instance when player falls
+* Automatically teleport player home when player loses
 
 ### Done
 * Basic File Structure
