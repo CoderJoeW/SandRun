@@ -1,23 +1,23 @@
 ---
-//Arena Position
+#Arena Position
 x: 0
 y: 0
 z: 0
 level: arena
 
-//Lobby Position
+#Lobby Position
 x: 0
 y: 0
 z: 0
 level: Lobby
 
-//Amount of time before match starts
+#Amount of time before match starts
 seconds: 30
-//Name of level lobby is located
+#Name of level lobby is located
 lobby: lobby
-//Minimum amount of players before timer starts
+#Minimum amount of players before timer starts
 min-players: 5
-//Maximum amount of players that can join
+#Maximum amount of players that can join
 max-players: 20
 
 ...
