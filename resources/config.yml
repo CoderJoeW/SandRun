@@ -5,6 +5,12 @@ y: 0
 z: 0
 level: arena
 
+//Lobby Position
+x: 0
+y: 0
+z: 0
+level: Lobby
+
 //Amount of time before match starts
 seconds: 30
 //Name of level lobby is located
