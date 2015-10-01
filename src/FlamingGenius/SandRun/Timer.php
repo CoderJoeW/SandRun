@@ -16,7 +16,7 @@ class Timer extends PluginTask{
  }
  public function onRun($currentTick){
   $x = $this->getPlugin()->getConfig()->get("x");
-  $y = $this->getPlugin()->getPlugin()->getConfig()->get("y");
+  $y = $this->getPlugin()->getConfig()->get("y");
   $z = $this->getPlugin()->getConfig()->get("z");
   $level = $this->getPlugin()->getConfig()->get("level");
   if($seconds == 0){
