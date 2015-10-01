@@ -1,6 +1,7 @@
 <?php
 namespace FlamingGenius\SandRun;
 use pocketmine\plugin\PluginBase;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\event\Event;
@@ -11,11 +12,11 @@ class SandRun extends PluginBase implements Listener{
   $this->getServer()->getPluginManager()->registerEvents($this, $this);
  }
  public function createTask(){
-  $timer = new Task($this);
+  $timer = new Timer($this);
   $h = $this->getServer()->getScheduler()->scheduleRepeatingTask($timer, 20);
   $this->timer[$timer->getTaskId] = $timer->getTaskId();
  }
- public function onLobbyJoin(){
+ public function onLobbyJoin(PlayerJoinEvent $event){
   $lobby = $this->getConfig()->get("lobby-world");
   $players = count($this->getServer()->getLevelByName($lobby)->getPlayers());
   $min = $this->getConfig()->get("min-players");
