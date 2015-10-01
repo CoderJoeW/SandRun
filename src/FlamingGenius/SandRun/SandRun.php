@@ -17,7 +17,7 @@ class SandRun extends PluginBase implements Listener{
   $players = count($this->getServer()->getLevelByName($lobby)->getPlayers());
   $min = $this->getConfig()->get("min-players");
   $max = $this->getConfig()->get("max-players");
-  $i = $this->getConfig()->get("seconds");
+  $x = $this->getConfig()->get("seconds");
   if($players >= $min){
    $timer = new Timer($this);
    $h = $this->getServer()->getScheduler()->scheduleRepeatingTask($timer, 20);
