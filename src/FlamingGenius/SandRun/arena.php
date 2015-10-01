@@ -7,10 +7,10 @@ use pocketmine\event\PlayerJoinEvent;
 
 class arena{
   public function onArenaJoin(PlayerJoinEvent $event){
-    $players = $event->getServer()->getOnlinePlayers();
+    $players = $this->getServer()->getOnlinePlayers();
     foreach($players as $player){
-     $player->getName();
-     $this->getServer()->broadcastMessage($player . "Has Connected");
+      $name = $event->getPlayer()->getName();
+      $this->getServer()->broadcastMessage($name . "Has Connected");
     }
   }
 }
