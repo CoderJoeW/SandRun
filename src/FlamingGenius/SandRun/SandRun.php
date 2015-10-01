@@ -11,17 +11,26 @@ class SandRun extends PluginBase implements Listener{
   $this->saveDefaultConfig();
   $this->getServer()->getPluginManager()->registerEvents($this, $this);
  }
- public function createTask(){
-  $timer = new Timer($this);
-  $h = $this->getServer()->getScheduler()->scheduleRepeatingTask($timer, 20);
-  $this->timer[$timer->getTaskId] = $timer->getTaskId();
- }
+ 
  public function onLobbyJoin(PlayerJoinEvent $event){
   $lobby = $this->getConfig()->get("lobby-world");
   $players = count($this->getServer()->getLevelByName($lobby)->getPlayers());
   $min = $this->getConfig()->get("min-players");
+  $max = $this->getConfig()->get("max-players");
+  $i = $this->getConfig()->get("seconds");
   if($players >= $min){
-   //idk what you want to do here, so i'll just leave this alone
+   $timer = new Timer($this);
+   $h = $this->getServer()->getScheduler()->scheduleRepeatingTask($timer, 20);
+   $this->timer[$timer->getTaskId] = $timer->getTaskId();
+   for($x; ; $x--){
+    $this->getServer)->broadcastMessage("Game starting in" . $x);
+   }
+  }
+  elseif($players < $min){
+   $this->getServer()->broadcastMessage("Waiting for more people");
+  }
+  elseif($players > $max){
+   $this->getServer()->broadcastMessage("Too many players in lobby");
   }
  }
 }
