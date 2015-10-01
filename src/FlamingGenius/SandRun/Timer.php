@@ -1,41 +1,29 @@
 <?php
 namespace FlamingGenius\SandRun;
-
+use pocketmine\level\Position;
 use pocketmine\scheduler\PluginTask;
-
-//line6
+use pocketmine\Player;
 class Timer extends PluginTask{
- 
  public $plugin;
  public $seconds;
- 
-//line 12
- public function __construct(SandRun $plugin, player $player, $time){
+ public function __construct(SandRun $plugin, Player $player){
   parent::__construct($plugin);
   $this->plugin = $plugin;
-  $this->seconds = $this->getConfig()->get("seconds");
+  $this->seconds = $this->getPlugin()->getConfig()->get("seconds");
  }
- //line 18
  public function getPlugin(){
   return $this->plugin;
  }
- 
- public function onRun($tick){
-  $x = $this->getConfig()->get("x");
-  $y = $this->getConfig()->get("y");
-  $z = $this->getConfig()->get("z");
-  $level = $this->getConfig()->get("level");
-//line 28
+ public function onRun($currentTick){
+  $x = $this->getPlugin()->getConfig()->get("x");
+  $y = $this->getPlugin()->getPlugin()->getConfig()->get("y");
+  $z = $this->getPlugin()->getConfig()->get("z");
+  $level = $this->getPlugin()->getConfig()->get("level");
   if($seconds == 0){
-   $player->teleport(new position($x,$y,$z,$level));
+   $player->teleport(new Position($x,$y,$z,$this->getPlugin()->getServer()->getLevelByName($level)));
   }
    else{
     $seconds--;
    }
  }
-//line 36
-
-
 }
-
-?>
